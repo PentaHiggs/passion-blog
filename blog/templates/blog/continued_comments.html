@@ -1,0 +1,15 @@
+{% load staticfiles %}
+{% for x in starting_blockquotes %} <blockquote> {% endfor %}
+{% for comment in comment_list %}
+{% if comment.start_blockquote %} <blockquote class="comment-blockquote"> {% endif %}
+	<div id="comment{{ comment.post.id }} class="blogcomment-div">
+		<div id="crtext{{ comment.post.id }}" style="display: none;">
+			Responding to {{ comment.post.author.name }}({{ comment.post.return_nice_date }})
+		</div>
+		<p>{{ comment.post.author.name }} - {{ comment.post.return_nice_date }}</p>
+		<p>{{ comment.post.post_title }}</p>
+		<p>{{ comment.post.post_body }}</p>
+		<small>{{ comment.post.return_nice_timestamp }} - <a href="#" id="cr{{ comment.post.id }}" title="commentResponseLink">respond</a></small>
+		{% for x in comment.end_blockquote %}</blockquote>{% endfor %}
+	</div>
+{% endfor %}

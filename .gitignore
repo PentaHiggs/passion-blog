@@ -51,3 +51,6 @@ docs/_build/
 
 # Not saving settings/__init__.py since it is a local configuration
 mysite/settings/__init__.py
+
+# Databases
+*.sqlite3
