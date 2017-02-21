@@ -1,4 +1,4 @@
+from mysite.settings.production import * 
 
-from mysite.settings.development import * 
-
-SECRET_KEY = "eah@o%p+=$h0tvw!a5c%m0ow8g45lpp=gur53#vq-l+u&n9sz+"
+ALLOWED_HOSTS += [ "higgstastic.me", "104.236.13.94",] 
+SECRET_KEY = "a)_8qf17f^942fy4c-o-vg^phi6x*g*o%k)byhmnri!raa#ood"
