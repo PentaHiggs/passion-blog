@@ -52,5 +52,8 @@ docs/_build/
 # Not saving settings/__init__.py since it is a local configuration
 mysite/settings/__init__.py
 
+# We don't need to save the collectstatic folder, just the individual app and project static folders
+static/
+
 # Databases
 *.sqlite3
