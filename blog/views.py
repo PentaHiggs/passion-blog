@@ -23,9 +23,10 @@ def retrieve_query(from_, name, default):
     return value
 
 def generate_archive_months():
-    """Returns a list of triples, e.g. (2013, 2, "February"),
-    containing the last twelve months for which a BlogPost 
-    created on that month exists, in reverse chronological order.
+    """ Returns a list of tuples, e.g.(2013, 2, "February"), containing recent posts.
+    
+    More specifically, they contain the last twelve months for which a 
+    BlogPost created on that month exists, in reverse chronological order.
     """
     date_ = timezone.datetime.now()
     blogged_months = []
