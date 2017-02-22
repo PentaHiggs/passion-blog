@@ -34,9 +34,9 @@ if import_fail:
 				" with your Django server?  y/n\n> ")
 			if response =="y":
 				allowed_hosts = "ALLOWED_HOSTS += ["
-                if setup_type = "developtment":
-                    # In development, it would be asinine to not allow 127.0.0.1 as a host
-                    allowed_hosts += " 127.0.0.1,"
+				if setup_type == "development":
+					# In development, it would be asinine to not allow 127.0.0.1 as a host
+					allowed_hosts += " 127.0.0.1,"
 				print("Please type domain names and IP addresses below.  Type empty"
 							+" line to end")
 				while True:
