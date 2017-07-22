@@ -57,3 +57,9 @@ static/
 
 # Databases
 *.sqlite3
+
+# Vim swap files
+*.swp
+
+# Personal notes file
+notes.txt
