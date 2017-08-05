@@ -5,16 +5,15 @@ from django.utils import timezone
 class BlogPostCategory(models.Model):
     """ Simple Model representing a blog post category """
     category_name = models.CharField(max_length=20, primary_key=True)
-    def __unicode__(self):
+    def __str__(self):
         return self.category_name
 
 class Author(models.Model):
     """ Simple Model representing an author """
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=254, primary_key=True)
-    def __unicode__(self):
+    def __str__(self):
         return (self.name + " at " + str(self.email))
-
 class Post(models.Model):
     """ An abstract model representing a general post """
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -38,7 +37,7 @@ class BlogPost(Post):
     post_body = models.TextField()
     categories = models.ManyToManyField(BlogPostCategory, blank=True)
     post_title = models.CharField(max_length=101, blank=False)
-    def __unicode__(self):
+    def __str__(self):
         return ("str(self.author)" + " on " + str(self.pub_date))
 
     def number_of_comments(self):
@@ -53,5 +52,5 @@ class BlogComment(Post):
     response_to = models.ForeignKey("BlogComment", blank=True, null=True)
     parent_blog_post = models.ForeignKey(BlogPost)
     post_title = models.CharField(max_length=101, default='', blank=True)
-    def __unicode__(self):
+    def __str__(self):
         return (str(self.author) + " on " + str(self.pub_date))
