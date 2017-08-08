@@ -53,7 +53,7 @@ docs/_build/
 mysite/settings/__init__.py
 
 # We don't need to save the collectstatic folder, just the individual app and project static folders
-static/
+/static/
 
 # Databases
 *.sqlite3
